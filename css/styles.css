@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+  --soft_red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark_brown: hsl(25, 47%, 15%);
+  --medium_brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --pale_orange: hsl(33, 100%, 98%);
+  --white: hsl(30, 100%, 98%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: var(--cream);
+  border-radius: 1px;
+  margin: 3.2rem 0;
+}
+
+.container {
+  width: 54rem;
+  display: grid;
+  gap: 2.4rem;
+}
+
+/* BALANCE SECTION */
+.balance__container {
+  background-color: var(--soft_red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  padding: 4rem 3.2rem;
+  border-radius: 20px;
+}
+
+.balance__wrapper {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.balance__title {
+  font-size: 1.8rem;
+  color: var(--white);
+  font-weight: 400;
+}
+
+.total__balance {
+  font-size: 3.2rem;
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* CHART SECTION */
+.chart__container {
+  background-color: var(--white);
+  padding: 3.2rem 3.2rem 4rem;
+  border-radius: 20px;
+}
+
+.chart__header {
+  font-size: 3.2rem;
+  color: var(--dark_brown);
+}
+
+/* TOTALS SECTION */
+.totals__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.month__total {
+  display: block;
+}
+
+.month__total__text,
+.last__month__text {
+  font-size: 1.8rem;
+  color: var(--medium_brown);
+}
+
+.month__total__amount {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: var(--dark_brown);
+}
+
+.percentage {
+  font-size: 1.8rem;
+  color: var(--dark_brown);
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
