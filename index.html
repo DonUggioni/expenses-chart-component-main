@@ -11,38 +11,50 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="css/styles.css" />
 
-    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script defer src="js/main.js"></script>
 
     <title>Frontend Mentor | Expenses chart component</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main>
       <div class="container">
-        <div class="chart__header"></div>
-        <div class="chart">
-          <canvas id="myChart" width="400" height="400"></canvas>
-        </div>
+        <section class="balance__container">
+          <div class="balance__wrapper">
+            <p class="balance__title">My balance</p>
+            <span class="total__balance">$000.00</span>
+          </div>
+          <img src="./images/logo.svg" alt="" class="logo" />
+        </section>
+        <section class="chart__container">
+          <div class="chart__wrapper">
+            <h1 class="chart__header">Spending - Last 7 days</h1>
+            <div class="chart">
+              <div class="chart_bar"></div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div>
+            <p class="month__total__text">Total this month</p>
+          </div>
+          <div class="totals__wrapper">
+            <div class="month__total">
+              <span class="month__total__amount">$000.00</span>
+            </div>
+            <div class="last__month__total">
+              <span class="percentage">0.0%</span>
+              <p class="last__month__text">from last month</p>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
-
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </footer>
   </body>
 </html>
