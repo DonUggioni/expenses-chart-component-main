@@ -8,6 +8,10 @@
   --cream: hsl(27, 66%, 92%);
   --pale_orange: hsl(33, 100%, 98%);
   --white: hsl(30, 100%, 98%);
+
+  /* Hover colors */
+  --soft_red-hover: hsla(10, 100%, 76%, 1);
+  --cyan-hover: hsla(186, 49%, 80%, 1);
 }
 
 * {
@@ -54,12 +58,14 @@ body {
   justify-content: space-between;
   width: 100%;
 
-  padding: 4rem 3.2rem;
+  padding: 2.8rem 3.2rem;
   border-radius: 20px;
 }
 
 .balance__wrapper {
   display: grid;
+  align-content: center;
+
   gap: 0.8rem;
 }
 
@@ -85,6 +91,69 @@ body {
 .chart__header {
   font-size: 3.2rem;
   color: var(--dark_brown);
+  margin-bottom: 6.6rem;
+}
+
+.chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+}
+
+.chart__bar {
+  display: grid;
+  justify-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.daily__total {
+  width: 7.5rem;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--dark_brown);
+
+  position: absolute;
+  top: -4.8rem;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.bar {
+  width: 5.3rem;
+  background-color: var(--soft_red);
+  border-radius: 5px;
+  transition: all 0.3s linear;
+}
+
+.bar__max {
+  width: 5.3rem;
+  background-color: var(--cyan);
+  border-radius: 5px;
+  transition: all 0.3s linear;
+}
+
+.week__day {
+  font-size: 1.5rem;
+  color: var(--medium_brown);
+}
+
+/* ACTIVE STATES */
+.chart__bar-hover .bar {
+  background-color: var(--soft_red-hover);
+}
+
+.chart__bar-hover .bar__max {
+  background-color: var(--cyan-hover);
+}
+
+.chart__bar-hover .daily__total {
+  opacity: 1;
 }
 
 /* TOTALS SECTION */
