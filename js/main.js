@@ -18,21 +18,19 @@ let value;
   const valuesArr = value.map((val) => val.amount);
   const daysArr = value.map((days) => days.day);
 
-  const createHTML = function (ElClass) {
+  const createHTML = function () {
     for (let info of value) {
       const html = `
       <div class="chart__bar">
       <p class="daily__total">$${info.amount}</p>
-      <div class="${ElClass}"></div>
+      <div class="bar" style= "height: ${info.amount * 0.28}rem"></div>
       <p class="week__day">${info.day}</p>
       </div>
       `;
-      chartEl.insertAdjacentHTML('afterbegin', html);
+      chartEl.insertAdjacentHTML('beforeend', html);
+      console.log(info);
     }
   };
-
-  createHTML('bar');
-
   chartBarEl.forEach((el) => {
     el.addEventListener('mouseenter', function (e) {
       if (e.target.classList.contains('chart__bar')) {
@@ -48,4 +46,5 @@ let value;
       }
     });
   });
+  createHTML('bar');
 })();
