@@ -1,8 +1,4 @@
 'use strict';
-const totalBalanceEl = document.querySelector('.total__balance');
-const monthTotalEl = document.querySelector('.month__total__amount');
-const percentageEl = document.querySelector('.percentage');
-const chartBarEl = document.querySelectorAll('.chart__bar');
 const chartEl = document.querySelector('.chart');
 
 let value;
@@ -15,42 +11,47 @@ let value;
     return data;
   };
   await getData();
-  const valuesArr = value.map((val) => val.amount);
-  const daysArr = value.map((days) => days.day);
 
-  // const max = Math.max(...data.map((day) => day.amount));
+  const maxAmount = Math.max(...value.map((day) => day.amount));
 
-  const createHTML = function () {
-    for (let info of value) {
-      const maxAmount = Math.max(...value.map((curr) => curr.amount));
-      const html = `
-      <div class="chart__bar">
-        <p class="daily__total">$${info.amount}</p>
-         <div class='${
-           info.amount < maxAmount ? 'bar' : 'bar__max'
-         }' style= "height: ${info.amount * 0.28}rem"></div>
-         <p class="week__day">${info.day}</p>
-         </div>
-         `;
+  value.map((info) => {
+    console.log(info.amount);
+    const chartBar = document.createElement('div');
+    const dailyTotal = document.createElement('p');
+    const graphBar = document.createElement('div');
+    const weekDay = document.createElement('p');
 
-      chartEl.insertAdjacentHTML('beforeend', html);
-    }
-  };
-  createHTML();
+    chartBar.classList.add('chart__bar');
+    dailyTotal.classList.add('daily__total');
+    graphBar.classList.add(info.amount === maxAmount ? 'bar__max' : 'bar');
+    weekDay.classList.add('week__day');
+
+    dailyTotal.textContent = `$${info.amount}`;
+    weekDay.textContent = info.day;
+
+    graphBar.style.height = `${info.amount * 0.28}rem`;
+
+    chartEl.appendChild(chartBar);
+    chartBar.appendChild(dailyTotal);
+    chartBar.appendChild(graphBar);
+    chartBar.appendChild(weekDay);
+
+    const chartDivs = document.querySelectorAll('.chart__bar');
+
+    chartDivs.forEach((el) => {
+      el.addEventListener('mouseenter', function (e) {
+        if (e.target.classList.contains('chart__bar')) {
+          el.classList.add('chart__bar-hover');
+        }
+      });
+    });
+
+    chartDivs.forEach((el) => {
+      el.addEventListener('mouseleave', function (e) {
+        if (e.target.classList.contains('chart__bar-hover')) {
+          el.classList.remove('chart__bar-hover');
+        }
+      });
+    });
+  });
 })();
-
-chartBarEl.forEach((el) => {
-  el.addEventListener('mouseenter', function (e) {
-    if (e.target.classList.contains('chart__bar')) {
-      el.classList.add('chart__bar-hover');
-    }
-  });
-});
-
-chartBarEl.forEach((el) => {
-  el.addEventListener('mouseleave', function (e) {
-    if (e.target.classList.contains('chart__bar-hover')) {
-      el.classList.remove('chart__bar-hover');
-    }
-  });
-});
