@@ -12,10 +12,9 @@ let value;
   };
   await getData();
 
-  const maxAmount = Math.max(...value.map((day) => day.amount));
+  const maxAmount = Math.max(...value.map((val) => val.amount));
 
   value.map((info) => {
-    console.log(info.amount);
     const chartBar = document.createElement('div');
     const dailyTotal = document.createElement('p');
     const graphBar = document.createElement('div');

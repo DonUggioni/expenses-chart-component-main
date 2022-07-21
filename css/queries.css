@@ -1,0 +1,65 @@
+@media (max-width: 34em) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .divider {
+    margin: 2.4rem 0;
+  }
+
+  .balance__container {
+    padding: 2rem;
+  }
+
+  .balance__wrapper {
+    gap: 0.4rem;
+  }
+
+  .balance__title {
+    font-size: 1.5rem;
+  }
+
+  .total__balance {
+    font-size: 2.4rem;
+  }
+
+  .logo__container img {
+    width: 6rem;
+  }
+
+  .chart__container {
+    padding: 2.4rem 2rem;
+  }
+
+  .chart__header {
+    font-size: 2.4rem;
+    margin-bottom: 5.2rem;
+  }
+
+  .chart {
+    gap: 1.2rem;
+  }
+
+  .bar,
+  .bar__max {
+    width: 3.3rem;
+    border-radius: 3px;
+  }
+
+  .week__day {
+    font-size: 1.2rem;
+  }
+
+  .month__total__text,
+  .last__month__text {
+    font-size: 1.5rem;
+  }
+
+  .month__total__amount {
+    font-size: 3rem;
+  }
+
+  .percentage {
+    font-size: 1.5rem;
+  }
+}

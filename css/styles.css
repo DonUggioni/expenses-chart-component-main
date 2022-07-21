@@ -45,7 +45,7 @@ body {
 }
 
 .container {
-  width: 54rem;
+  max-width: 54rem;
   display: grid;
   gap: 2.4rem;
 }
@@ -56,7 +56,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 
   padding: 2.8rem 3.2rem;
   border-radius: 20px;
@@ -84,7 +83,7 @@ body {
 /* CHART SECTION */
 .chart__container {
   background-color: var(--white);
-  padding: 3.2rem 3.2rem 4rem;
+  padding: 3.2rem 4rem 4rem;
   border-radius: 20px;
 }
 
@@ -167,8 +166,8 @@ body {
   align-items: center;
 }
 
-.month__total {
-  display: block;
+.last__month__total {
+  text-align: right;
 }
 
 .month__total__text,
@@ -186,6 +185,7 @@ body {
 .percentage {
   font-size: 1.8rem;
   color: var(--dark_brown);
+  font-weight: 700;
 }
 
 /* Attribution */
